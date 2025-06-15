@@ -1,4 +1,6 @@
 
+import React from 'react';
+
 const PhilosophyCard = ({ 
   title, 
   description, 
@@ -43,11 +45,11 @@ const CodeEvolutionVisual = () => (
     
     <div className="text-xs text-muted-foreground">输出：完整方案</div>
     <div className="font-code text-sm bg-background/50 p-3 rounded border border-accent/20 space-y-1">
-      <div><span className="text-primary">function</span> <span className="text-accent">createMasterpiece</span>() {'{'}</div>
+      <div><span className="text-primary">function</span> <span className="text-accent">createMasterpiece</span>() {`{`}</div>
       <div className="pl-4 text-muted-foreground">// 响应式设计 + 动画交互</div>
       <div className="pl-4 text-muted-foreground">// SEO优化 + 性能调优</div>
       <div className="pl-4 text-muted-foreground">// 个性化内容策略</div>
-      <div>{'}'}</div>
+      <div>{`}`}</div>
     </div>
   </div>
 );
@@ -118,8 +120,8 @@ const PhilosophySection = () => {
           {/* 价值卡片网格 */}
           <div className="grid lg:grid-cols-3 gap-8">
             <PhilosophyCard
-              title=""超越式创作"理念"
-              description="我的每一个提示词都旨在"超越"而非"复制"。它们不仅告诉你"做什么"，更启发你"如何思考"，引导AI从简单的执行者，变为富有灵感的共创伙伴。"
+              title="「超越式创作」理念"
+              description="我的每一个提示词都旨在「超越」而非「复制」。它们不仅告诉你「做什么」，更启发你「如何思考」，引导AI从简单的执行者，变为富有灵感的共创伙伴。"
               visual={<CodeEvolutionVisual />}
               delay={0.2}
             />
