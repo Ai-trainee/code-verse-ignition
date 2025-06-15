@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const PhilosophyCard = ({ 
   title, 
@@ -103,6 +103,8 @@ const MultiModalVisual = () => (
 );
 
 const PhilosophySection = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="philosophy" className="py-24 bg-background">
       <div className="container mx-auto px-6">
@@ -110,32 +112,32 @@ const PhilosophySection = () => {
           {/* 标题 */}
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-4xl lg:text-5xl font-alchemist font-bold text-gradient glow-text">
-              核心理念与价值展示
+              {t('philosophy.title')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              每一个提示词背后，都蕴含着深度思考与实战验证的智慧结晶
+              {t('philosophy.subtitle')}
             </p>
           </div>
 
           {/* 价值卡片网格 */}
           <div className="grid lg:grid-cols-3 gap-8">
             <PhilosophyCard
-              title="「超越式创作」理念"
-              description="我的每一个提示词都旨在「超越」而非「复制」。它们不仅告诉你「做什么」，更启发你「如何思考」，引导AI从简单的执行者，变为富有灵感的共创伙伴。"
+              title={t('philosophy.card1.title')}
+              description={t('philosophy.card1.desc')}
               visual={<CodeEvolutionVisual />}
               delay={0.2}
             />
             
             <PhilosophyCard
-              title="千锤百炼的实战性"
-              description="这里的每一个提示词都经过我个人在真实项目中的反复测试与优化。它们并非理论空谈，而是能切实解决问题、提升效率、并产出高质量结果的实战利器。"
+              title={t('philosophy.card2.title')}
+              description={t('philosophy.card2.desc')}
               visual={<ModelComparisonVisual />}
               delay={0.4}
             />
             
             <PhilosophyCard
-              title="多模态适用性"
-              description="从生成高转化率的营销文案，到构建复杂的网站前端代码，再到创作电影级的AI视频脚本，我的提示词框架具有高度的可迁移性，覆盖文、图、代码、视频等多种模态。"
+              title={t('philosophy.card3.title')}
+              description={t('philosophy.card3.desc')}
               visual={<MultiModalVisual />}
               delay={0.6}
             />

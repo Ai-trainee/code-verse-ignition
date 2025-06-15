@@ -1,6 +1,6 @@
-
 import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const AlchemyAnimation = () => {
   const [animationStep, setAnimationStep] = useState(0);
@@ -78,6 +78,8 @@ const AlchemyAnimation = () => {
 };
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-alchemy-gradient overflow-hidden">
       {/* 背景网格 */}
@@ -92,20 +94,18 @@ const HeroSection = () => {
               <div className="space-y-6">
                 <h1 className="text-5xl lg:text-7xl font-alchemist font-bold leading-tight">
                   <span className="block text-gradient glow-text animate-emerge">
-                    超越指令，
+                    {t('hero.title.1')}
                   </span>
                   <span className="block text-foreground animate-emerge" style={{ animationDelay: '0.2s' }}>
-                    开启AI的
+                    {t('hero.title.2')}
                   </span>
                   <span className="block text-gradient glow-text animate-emerge" style={{ animationDelay: '0.4s' }}>
-                    无限可能。
+                    {t('hero.title.3')}
                   </span>
                 </h1>
                 
                 <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl animate-emerge" style={{ animationDelay: '0.6s' }}>
-                  这里不是简单的提示词列表，而是我作为一名
-                  <span className="text-primary font-medium"> AIGC技术实践者</span>，
-                  探索、打磨并验证过的"宇宙起点"。每一个提示词，都是一个开启AI创造力新维度的钥匙。
+                  {t('hero.subtitle')}
                 </p>
               </div>
 
@@ -113,14 +113,14 @@ const HeroSection = () => {
               <div className="flex flex-col sm:flex-row gap-4 animate-emerge" style={{ animationDelay: '0.8s' }}>
                 <button className="group px-8 py-4 bg-primary text-primary-foreground font-medium rounded-xl relative overflow-hidden hover:scale-105 transition-all duration-300">
                   <span className="relative z-10 flex items-center gap-2">
-                    探索提示词宇宙
+                    {t('hero.cta.explore')}
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
                 
                 <button className="px-8 py-4 border border-border text-foreground font-medium rounded-xl hover:bg-secondary hover:border-primary/50 transition-all duration-300">
-                  了解我的创作哲学
+                  {t('hero.cta.philosophy')}
                 </button>
               </div>
 
@@ -128,15 +128,15 @@ const HeroSection = () => {
               <div className="flex gap-8 pt-8 animate-emerge" style={{ animationDelay: '1s' }}>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary">500+</div>
-                  <div className="text-sm text-muted-foreground">精心调试的提示词</div>
+                  <div className="text-sm text-muted-foreground">{t('hero.stats.prompts')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-accent">50k+</div>
-                  <div className="text-sm text-muted-foreground">社群成员使用</div>
+                  <div className="text-sm text-muted-foreground">{t('hero.stats.users')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary">95%</div>
-                  <div className="text-sm text-muted-foreground">成功率提升</div>
+                  <div className="text-sm text-muted-foreground">{t('hero.stats.success')}</div>
                 </div>
               </div>
             </div>

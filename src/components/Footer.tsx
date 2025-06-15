@@ -1,7 +1,10 @@
 
 import { Github, Youtube } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
+  const { t, language } = useLanguage();
+
   return (
     <footer className="bg-background border-t border-border/50 py-12">
       <div className="container mx-auto px-6">
@@ -17,38 +20,38 @@ const Footer = () => {
                 <span className="text-muted-foreground ml-2">Prompts</span>
               </div>
               <p className="text-muted-foreground leading-relaxed max-w-md">
-                专注于分享高质量、经过千锤百炼的AI提示词，帮助创作者释放AI的无限可能。
+                {t('footer.tagline')}
               </p>
               <div className="text-sm text-muted-foreground">
-                "读AI天机，写技术新事" - 让每个人都能成为AI时代的创造者
+                {t('footer.motto')}
               </div>
             </div>
 
             {/* 快速链接 */}
             <div className="space-y-4">
-              <h3 className="font-semibold text-foreground">快速导航</h3>
+              <h3 className="font-semibold text-foreground">{t('footer.links.title')}</h3>
               <div className="space-y-2">
                 <a href="#prompts" className="block text-muted-foreground hover:text-primary transition-colors">
-                  提示词分类
+                  {t('nav.prompts')}
                 </a>
                 <a href="#philosophy" className="block text-muted-foreground hover:text-primary transition-colors">
-                  创作哲学
+                  {t('nav.philosophy')}
                 </a>
                 <a href="#about" className="block text-muted-foreground hover:text-primary transition-colors">
-                  关于我
+                  {t('nav.about')}
                 </a>
                 <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">
-                  使用指南
+                  {language === 'zh' ? '使用指南' : 'User Guide'}
                 </a>
               </div>
             </div>
 
             {/* 联系方式 */}
             <div className="space-y-4">
-              <h3 className="font-semibold text-foreground">联系我</h3>
+              <h3 className="font-semibold text-foreground">{t('footer.contact.title')}</h3>
               <div className="space-y-3">
                 <div className="text-muted-foreground">
-                  <div className="text-sm">商务合作</div>
+                  <div className="text-sm">{t('footer.contact.business')}</div>
                   <div className="text-sm">contact@aigenesis.com</div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -62,16 +65,16 @@ const Footer = () => {
                   <a 
                     href="#" 
                     className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center hover:bg-accent/20 hover:text-accent transition-all duration-300"
-                    aria-label="B站"
+                    aria-label={language === 'zh' ? 'B站' : 'YouTube'}
                   >
                     <Youtube className="w-5 h-5" />
                   </a>
                   <a 
                     href="#" 
                     className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all duration-300"
-                    aria-label="微信"
+                    aria-label={language === 'zh' ? '微信' : 'WeChat'}
                   >
-                    <div className="text-sm font-bold">微</div>
+                    <div className="text-sm font-bold">{language === 'zh' ? '微' : 'W'}</div>
                   </a>
                 </div>
               </div>
@@ -84,21 +87,25 @@ const Footer = () => {
               
               {/* 版权信息 */}
               <div className="flex items-center gap-4">
-                <span>© 2024 AI Genesis Prompts. All rights reserved.</span>
-                <div className="hidden md:block w-px h-4 bg-border/50"></div>
-                <span>粤ICP备xxxxxxxx号</span>
+                <span>{t('footer.copyright')}</span>
+                {language === 'zh' && (
+                  <>
+                    <div className="hidden md:block w-px h-4 bg-border/50"></div>
+                    <span>粤ICP备xxxxxxxx号</span>
+                  </>
+                )}
               </div>
 
               {/* 附加链接 */}
               <div className="flex items-center gap-6">
                 <a href="#" className="hover:text-primary transition-colors">
-                  隐私政策
+                  {language === 'zh' ? '隐私政策' : 'Privacy Policy'}
                 </a>
                 <a href="#" className="hover:text-primary transition-colors">
-                  服务条款
+                  {language === 'zh' ? '服务条款' : 'Terms of Service'}
                 </a>
                 <a href="#" className="hover:text-primary transition-colors">
-                  免责声明
+                  {language === 'zh' ? '免责声明' : 'Disclaimer'}
                 </a>
               </div>
             </div>
@@ -106,7 +113,7 @@ const Footer = () => {
 
           {/* 备案信息 */}
           <div className="mt-4 text-center text-xs text-muted-foreground">
-            <p>本站提供的AI提示词仅供学习交流使用，请遵守相关法律法规，合理使用AI技术</p>
+            <p>{t('footer.disclaimer')}</p>
           </div>
 
         </div>

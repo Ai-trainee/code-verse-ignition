@@ -1,9 +1,12 @@
 
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/contexts/LanguageContext';
+import LanguageToggle from './LanguageToggle';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,31 +38,34 @@ const Navigation = () => {
               href="#prompts" 
               className="text-foreground/80 hover:text-primary transition-colors relative group"
             >
-              提示词分类
+              {t('nav.prompts')}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a 
               href="#philosophy" 
               className="text-foreground/80 hover:text-primary transition-colors relative group"
             >
-              创作哲学
+              {t('nav.philosophy')}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a 
               href="#about" 
               className="text-foreground/80 hover:text-primary transition-colors relative group"
             >
-              关于我
+              {t('nav.about')}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
           </div>
 
-          {/* CTA Button */}
-          <button className="relative px-6 py-3 bg-primary text-primary-foreground font-medium rounded-xl overflow-hidden group">
-            <span className="relative z-10">加入知识星球</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out"></div>
-          </button>
+          {/* Language Toggle and CTA */}
+          <div className="flex items-center space-x-4">
+            <LanguageToggle />
+            <button className="relative px-6 py-3 bg-primary text-primary-foreground font-medium rounded-xl overflow-hidden group">
+              <span className="relative z-10">{t('nav.join')}</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out"></div>
+            </button>
+          </div>
         </div>
       </div>
     </nav>
