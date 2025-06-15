@@ -1,94 +1,49 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+/* AI Genesis Prompts - 数字炼金术士实验室主题设计系统 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* 深空炼金术师配色方案 */
+    --background: 220 27% 8%;          /* 深空蓝黑 */
+    --foreground: 210 40% 95%;         /* 月光白 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 20% 12%;               /* 炼金台卡片 */
+    --card-foreground: 210 40% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 20% 12%;
+    --popover-foreground: 210 40% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 45 93% 65%;             /* 炼金术金 */
+    --primary-foreground: 220 27% 8%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 15% 18%;          /* 神秘紫灰 */
+    --secondary-foreground: 210 40% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 215 20% 70%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 267 84% 70%;             /* 魔法紫 */
+    --accent-foreground: 210 40% 95%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 15% 20%;             /* 边框暗线 */
+    --input: 220 15% 20%;
+    --ring: 45 93% 65%;                /* 聚焦金环 */
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* 炼金术特效变量 */
+    --glow-primary: 45 93% 65%;
+    --glow-accent: 267 84% 70%;
+    --particle-1: 200 100% 80%;
+    --particle-2: 45 93% 65%;
+    --particle-3: 267 84% 70%;
   }
 }
 
@@ -99,5 +54,134 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* 炼金术字体系统 */
+  .font-alchemist {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .font-code {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+
+  /* 炼金术发光效果 */
+  .glow-text {
+    text-shadow: 0 0 10px hsl(var(--glow-primary)), 
+                 0 0 20px hsl(var(--glow-primary)), 
+                 0 0 30px hsl(var(--glow-primary));
+  }
+
+  .glow-border {
+    box-shadow: 0 0 20px hsla(var(--glow-primary), 0.3),
+                inset 0 0 20px hsla(var(--glow-primary), 0.1);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 20px hsla(var(--glow-accent), 0.4),
+                inset 0 0 20px hsla(var(--glow-accent), 0.1);
+  }
+
+  /* 炼金术背景粒子动画 */
+  @keyframes float-particles {
+    0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+    50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+  }
+
+  @keyframes alchemy-pulse {
+    0%, 100% { 
+      box-shadow: 0 0 20px hsla(var(--glow-primary), 0.3);
+      transform: scale(1);
+    }
+    50% { 
+      box-shadow: 0 0 40px hsla(var(--glow-primary), 0.6);
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes text-emerge {
+    0% { 
+      opacity: 0; 
+      transform: translateY(30px); 
+      filter: blur(10px);
+    }
+    100% { 
+      opacity: 1; 
+      transform: translateY(0); 
+      filter: blur(0);
+    }
+  }
+
+  @keyframes energy-flow {
+    0% { transform: translateX(-100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateX(100%); opacity: 0; }
+  }
+
+  /* 炼金术卡片悬停效果 */
+  .alchemy-card {
+    @apply relative overflow-hidden;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .alchemy-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsla(var(--glow-primary), 0.2),
+      transparent
+    );
+    transition: left 0.6s;
+  }
+
+  .alchemy-card:hover::before {
+    left: 100%;
+  }
+
+  .alchemy-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px hsla(var(--glow-primary), 0.3);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--primary)), 
+      hsl(var(--accent))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .animate-emerge {
+    animation: text-emerge 0.8s ease-out forwards;
+  }
+
+  .animate-pulse-alchemy {
+    animation: alchemy-pulse 3s ease-in-out infinite;
+  }
+
+  .animate-energy-flow {
+    animation: energy-flow 2s ease-in-out infinite;
+  }
+
+  .bg-alchemy-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--background)) 0%,
+      hsl(220 30% 10%) 50%,
+      hsl(var(--background)) 100%
+    );
   }
 }
