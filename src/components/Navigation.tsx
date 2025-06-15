@@ -28,7 +28,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="font-alchemist text-2xl font-bold">
-            <span className="text-gradient glow-text">AI Genesis</span>
+            <span className="text-gradient glow-text">AITrainee</span>
             <span className="text-muted-foreground ml-2">Prompts</span>
           </div>
 

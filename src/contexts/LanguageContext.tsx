@@ -72,7 +72,7 @@ const translations = {
     'footer.links.title': '快速导航',
     'footer.contact.title': '联系我',
     'footer.contact.business': '商务合作',
-    'footer.copyright': '© 2024 AI Genesis Prompts. All rights reserved.',
+    'footer.copyright': '© 2024 AITrainee Prompts. All rights reserved.',
     'footer.disclaimer': '本站提供的AI提示词仅供学习交流使用，请遵守相关法律法规，合理使用AI技术'
   },
   en: {
@@ -135,7 +135,7 @@ const translations = {
     'footer.links.title': 'Quick Navigation',
     'footer.contact.title': 'Contact Me',
     'footer.contact.business': 'Business Cooperation',
-    'footer.copyright': '© 2024 AI Genesis Prompts. All rights reserved.',
+    'footer.copyright': '© 2024 AITrainee Prompts. All rights reserved.',
     'footer.disclaimer': 'AI prompts provided on this site are for learning and communication only. Please comply with relevant laws and use AI technology responsibly.'
   }
 };

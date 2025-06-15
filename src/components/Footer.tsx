@@ -16,7 +16,7 @@ const Footer = () => {
             {/* Logo和简介 */}
             <div className="md:col-span-2 space-y-4">
               <div className="font-alchemist text-2xl font-bold">
-                <span className="text-gradient">AI Genesis</span>
+                <span className="text-gradient">AITrainee</span>
                 <span className="text-muted-foreground ml-2">Prompts</span>
               </div>
               <p className="text-muted-foreground leading-relaxed max-w-md">
